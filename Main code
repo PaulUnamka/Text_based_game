@@ -1,0 +1,22 @@
+import random
+import math
+print("Welcome to Crescents End.")
+play = int(input("Press 1 to continue"))
+if play == 1:
+    print("In a far off world a young warrior named Helios wishes to save his home land of apocphyra from damnation.")
+    print("For years on end the Un-holy being Walpurgis Has subjegated the land spreading demons to lay ruin.")
+    print("Un happy with this agony, young Helios sets out to ascend the tower of crescent to banish all demons that come his way and slay Walpurgis.")
+
+print("The controls are as stated below")
+print("Press 1 to attack with your sword")
+print("press 2 to defend with your shield")
+print("press 3 to use items that are stored in your inventory")
+print("And finally press 4 to chant texts from scrolls")
+print("Your HP is 10 DMG is 5 And mana is 10, you are equipped with a wooden sword and Shield which gives plus 2 to DMG")
+
+go = int(input("press 1 to enter the tower"))
+HP = 10
+DMG = 5
+MP = 10
+sword
+inv = []
