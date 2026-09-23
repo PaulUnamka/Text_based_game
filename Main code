@@ -3,10 +3,9 @@ import math
 HP = 10
 DMG = 5
 MP = 10
-inv = []
 wooden_sword = 2
 wooden_shield = 3
-iron_sword = 5 
+iron_sword = 5
 iron_shield = 5
 holy_sword = 15
 holy_shield = 15
@@ -18,7 +17,7 @@ if play == 1:
     print("In a far off world a young warrior named Helios wishes to save his home land of apocphyra from damnation.")
     print("For years on end the Un-holy being Walpurgis Has subjegated the land spreading demons to lay ruin.")
     print("Un happy with this agony, young Helios sets out to ascend the tower of crescent to banish all demons that come his way and slay Walpurgis.")
-
+#controls
 print("The controls are as stated below")
 print("Press 1 to attack with your sword")
 print("press 2 to defend with your shield")
@@ -26,4 +25,32 @@ print("press 3 to use items that are stored in your inventory")
 print("And finally press 4 to chant texts from scrolls")
 print("Your HP is 10 DMG is 5 And mana is 10, you are equipped with a wooden sword and Shield which gives plus 2 to DMG")
 
-go = int(input("press 1 to enter the tower"))
+go = int(input("press 1 to enter the first floor of the tower"))
+inv = [wooden_sword,wooden_shield]
+#These are the spawn chances for floor 1-2
+def monster_spawn1():
+
+    goblin_ch = random.randint(1, 3)
+    slime_ch = random.randint(1, 3)
+    vampire_ch = random.randint(1, 3)
+    vampire_xp = 5
+    goblin_xp = 3
+    slime_xp = 1
+    if goblin_ch == 3:
+        print("A goblin has appeared")
+    elif slime_ch == 3:
+        print("A slime has appeared")
+    elif vampire_ch == 3:
+        print("A vampire has appeared")
+    elif slime_ch == 3 and goblin_ch == 3:
+        print("A goblin has appeared")
+    elif slime_ch == 3 and vampire_ch == 3:
+        print("A vampire has appeared")
+    elif goblin_ch == 3 and vampire_ch == 3:
+        print("A vampire has appeared")
+    if goblin_ch != 3 and slime_ch != 3 and vampire_ch != 3:
+        print("A slime has appeared")
+if go ==1:
+    monster_spawn1()
+else:
+    monster_spawn1()
