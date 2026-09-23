@@ -1,5 +1,17 @@
 import random
 import math
+HP = 10
+DMG = 5
+MP = 10
+inv = []
+wooden_sword = 2
+wooden_shield = 3
+iron_sword = 5 
+iron_shield = 5
+holy_sword = 15
+holy_shield = 15
+Godslayer_sword = 20
+Godslayer_shield = 20
 print("Welcome to Crescents End.")
 play = int(input("Press 1 to continue"))
 if play == 1:
@@ -15,8 +27,3 @@ print("And finally press 4 to chant texts from scrolls")
 print("Your HP is 10 DMG is 5 And mana is 10, you are equipped with a wooden sword and Shield which gives plus 2 to DMG")
 
 go = int(input("press 1 to enter the tower"))
-HP = 10
-DMG = 5
-MP = 10
-sword
-inv = []
