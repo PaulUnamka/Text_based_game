@@ -1,25 +1,18 @@
 import random
 import math
-HP = 10
-DMG = 5
-MP = 10
-inv = []
+life = 5
 wooden_sword = 6
-wooden_shield = 6
-current_sword = wooden_sword
-current_shield = wooden_shield
 iron_sword = 5
-iron_shield = 5
 holy_sword = 2
-holy_shield = 2
+current_sword = wooden_sword
 play = int(input("Welcome to Crescents end press 1 to start..."))
 if play == 1:
     print("In a far off world a young warrior named Helios wishes to save his home land of apocphyra from damnation.")
     print("For years on end the Un-holy being Walpurgis Has subjegated the land spreading demons to lay ruin.")
     print("Un happy with this agony, young Helios sets out to ascend the tower of crescent to banish all demons that come his way and slay Walpurgis.")
-
+    print("You have 5 lives")
 go = int(input("press 1 to enter the first floor of the tower"))
-inv = [wooden_sword,wooden_shield]
+inv = [wooden_sword]
 #These are the spawn chances for floor 1-2
 def monster_spawn1():
     goblin_ch = random.randint(1, 3)
@@ -59,18 +52,66 @@ if go ==1:
     monster_spawn1()
 action = int(input("press 1 to attack "))
 while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
     if monster == goblin:
         text = ("goblin")
-    elif monster == slime:
+        chant = input("Repeat the following words: I shall slay this goblin with all my might")
+        if chant == "I shall slay this goblin with all my might":
+            print("The goblin is defeated")
+            break
+        else:
+            print("The goblin has defeated you in battle try again")
+            life = life - 1
+    if monster == slime:
         text = ("slime")
-    elif monster == vampire:
-        text = ("vampire")
-    if current_sword == wooden_sword:
-        chance = random.randint(1, wooden_sword)
-    elif current_sword == iron_sword:
-        chance = random.randint(1, iron_sword)
-    elif current_sword == holy_sword:
-        chance = random.randint(1, holy_sword)
-    if chance == 2 or chance == 5 or chance == 2:
-        print("You manage to easily slay the",text)
-    break
+        chant = input("Repeat the following words: I shall slay this slime with all my might")
+        if chant == "I shall slay this slime with all my might":
+            print("The slime is defeated")
+            break
+        else:
+            print("The slime has defeated you in battle try again")
+            life = life - 1
+    if monster == vampire:
+        chant = input("Repeat the following words: I shall slay this vampire with all my might")
+        if chant == "I shall slay this vampire with all my might":
+            print("The vampire is defeated")
+            break
+        else:
+            print("The vampire has defeated you in battle try again")
+            life = life - 1
+
+
+go = int(input("press 1 to continue"))
+while go == 1:
+    monster_spawn1()
+action = int(input("press 1 to attack "))
+# WAVE 2
+
+while action == 1:
+    if monster == goblin:
+        text = ("goblin")
+        chant = input("Repeat the following words: I shall slay this goblin with all my might")
+        if chant == "I shall slay this goblin with all my might":
+            print("The goblin is defeated")
+            break
+        else:
+            print("The goblin has defeated you in battle try again")
+            life = life - 1
+    if monster == slime:
+        text = ("slime")
+        chant = input("Repeat the following words: I shall slay this slime with all my might")
+        if chant == "I shall slay this slime with all my might":
+            print("The slime is defeated")
+            break
+        else:
+            print("The slime has defeated you in battle try again")
+            life = life - 1
+    if monster == vampire:
+        chant = input("Repeat the following words: I shall slay this vampire with all my might")
+        if chant == "I shall slay this vampire with all my might":
+            print("The vampire is defeated")
+            break
+        else:
+            print("The vampire has defeated you in battle try again")
+            life = life - 1
