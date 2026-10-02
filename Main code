@@ -1,3 +1,4 @@
+import sys
 
 print(r"""
  ▄████▄   ██▀███  ▓█████   ██████ ▓█████  ███▄    █ ▄▄▄█████▓   ▓█████  ███▄    █ ▓█████▄ 
@@ -18,6 +19,36 @@ wooden_sword = 6
 iron_sword = 5
 holy_sword = 2
 current_sword = wooden_sword
+import random
+def chant():
+    global new_log
+    log = [f"I shall slay this {text} with all my might", f"Return to ash oh {text} of the night", f"My sword shall vanquish you {text}"]
+    log_ch = random.randint(1,3)
+    if log_ch == 1:
+        new_log = (log[0])
+        print(new_log)
+    elif log_ch == 2:
+        new_log = (log[1])
+        print(new_log)
+    elif log_ch == 3:
+        new_log = (log[2])
+        print(new_log)
+        return new_log
+def chant1():
+    global new_log
+    log = [f"no {text} shall stand in my way", f"stay back foul {text} ", f"let the holy light emitting from my sword smite this {text} down"]
+    log_ch = random.randint(1,3)
+    if log_ch == 1:
+        new_log = (log[0])
+        print(new_log)
+    elif log_ch == 2:
+        new_log = (log[1])
+        print(new_log)
+    elif log_ch == 3:
+        new_log = (log[2])
+        print(new_log)
+    return new_log
+#These are the spawn chances for floor 1-2
 def monster_spawn1():
     goblin_ch = random.randint(1, 3)
     slime_ch = random.randint(1, 3)
@@ -52,122 +83,6 @@ def monster_spawn1():
         print("A slime has appeared")
         monster = slime
     return monster
-play = int(input("Welcome to Crescents end press 1 to start..."))
-if play == 1:
-    print("In a far off world a young warrior named Helios wishes to save his home land of apocphyra from damnation.")
-    print("For years on end the Un-holy being Walpurgis Has subjegated the land spreading demons to lay ruin.")
-    print("Un happy with this agony, young Helios sets out to ascend the tower of crescent to banish all demons that come his way and slay Walpurgis.")
-    print("You have 5 lives")
-go = int(input("press 1 to enter the first floor of the tower"))
-inv = [wooden_sword]
-#These are the spawn chances for floor 1-2
-if go ==1:
-    monster_spawn1()
-action = int(input("press 1 to attack "))
-while action == 1:
-    if life == 0:
-        print("You have no more lives.......GAME OVER")
-        break
-    if monster == goblin:
-        text = ("goblin")
-        chant = input("Repeat the following words: I shall slay this goblin with all my might")
-        if chant == "I shall slay this goblin with all my might":
-            print("The goblin is defeated")
-            break
-        else:
-            print("The goblin has defeated you in battle try again")
-            life = life - 1
-    if monster == slime:
-        text = ("slime")
-        chant = input("Repeat the following words: I shall slay this slime with all my might")
-        if chant == "I shall slay this slime with all my might":
-            print("The slime is defeated")
-            break
-        else:
-            print("The slime has defeated you in battle try again")
-            life = life - 1
-    if monster == vampire:
-        chant = input("Repeat the following words: I shall slay this vampire with all my might")
-        if chant == "I shall slay this vampire with all my might":
-            print("The vampire is defeated")
-            break
-        else:
-            print("The vampire has defeated you in battle try again")
-            life = life - 1
-
-
-go = int(input("press 1 to continue"))
-if go == 1:
-    monster_spawn1()
-action = int(input("press 1 to attack "))
-
-# WAVE 2
-
-while action == 1:
-    if monster == goblin:
-        text = ("goblin")
-        chant = input("Repeat the following words: I shall slay this goblin with all my might")
-        if chant == "I shall slay this goblin with all my might":
-            print("The goblin is defeated")
-            break
-        else:
-            print("The goblin has defeated you in battle try again")
-            life = life - 1
-    if monster == slime:
-        text = ("slime")
-        chant = input("Repeat the following words: I shall slay this slime with all my might")
-        if chant == "I shall slay this slime with all my might":
-            print("The slime is defeated")
-            break
-        else:
-            print("The slime has defeated you in battle try again")
-            life = life - 1
-    if monster == vampire:
-        chant = input("Repeat the following words: I shall slay this vampire with all my might")
-        if chant == "I shall slay this vampire with all my might":
-            print("The vampire is defeated")
-            break
-        else:
-            print("The vampire has defeated you in battle try again")
-            life = life - 1
-
-# WAVE 3
-
-go = int(input("press 1 to continue"))
-if go == 1:
-    monster_spawn1()
-action = int(input("press 1 to attack "))
-while action == 1:
-    if monster == goblin:
-        text = ("goblin")
-        chant = input("Repeat the following words: I shall slay this goblin with all my might")
-        if chant == "I shall slay this goblin with all my might":
-            print("The goblin is defeated")
-            break
-        else:
-            print("The goblin has defeated you in battle try again")
-            life = life - 1
-    if monster == slime:
-        text = ("slime")
-        chant = input("Repeat the following words: I shall slay this slime with all my might")
-        if chant == "I shall slay this slime with all my might":
-            print("The slime is defeated")
-            break
-        else:
-            print("The slime has defeated you in battle try again")
-            life = life - 1
-    if monster == vampire:
-        chant = input("Repeat the following words: I shall slay this vampire with all my might")
-        if chant == "I shall slay this vampire with all my might":
-            print("The vampire is defeated")
-            break
-        else:
-            print("The vampire has defeated you in battle try again")
-            life = life - 1
-
-#FLOOR 1 DONE
-print("Well done, you have bested the demons of the first floor...")
-
 def monster_spawn2():
     werewolf_ch = random.randint(1, 3)
     succubus_ch = random.randint(1, 3)
@@ -187,13 +102,13 @@ def monster_spawn2():
         print("A succubus has appeared")
         monster = succubus
     elif hellhound_ch == 3:
-        print("A vampire has appeared")
-        monster = vampire
+        print("A hell hound has appeared")
+        monster = hellhounf
     elif succubus_ch == 3 and werewolf_ch == 3:
-        print("A goblin has appeared")
-        monster = goblin
+        print("A succubus has appeared")
+        monster = succubus
     elif succubus_ch == 3 and hellhound_ch == 3:
-        print("A vampire has appeared")
+        print("A hell hound has appeared")
         monster = vampire
     elif werewolf_ch == 3 and hellhound_ch == 3:
         print("A hell hound has appeared")
@@ -202,4 +117,169 @@ def monster_spawn2():
         print("A succubus has appeared")
         monster = succubus
     return monster
+play = int(input("Welcome to Crescents end press 1 to start..."))
+if play == 1:
+    print("In a far off world a young warrior named Helios wishes to save his home land of apocphyra from damnation.")
+    print("For years on end the Un-holy being Walpurgis Has subjegated the land spreading demons to lay ruin.")
+    print("Un happy with this agony, young Helios sets out to ascend the tower of crescent to banish all demons that come his way and slay Walpurgis.")
+    print("You have 5 lives")
+go = int(input("press 1 to enter the first floor of the tower"))
+if go ==1:
+    monster_spawn1()
+action = int(input("press 1 to attack "))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+        sys.exit()
+    if monster == goblin:
+        text = ("goblin")
+        print("Repeat the following words:")
+        chant()
+        player = input()
+        if player == new_log:
+            print("The goblin is defeated")
+            break
+        else:
+            print("The goblin has defeated you in battle try again")
+            life = life - 1
+    if monster == slime:
+        text = ("slime")
+        print("Repeat the following words:")
+        chant()
+        player = input()
+        if player == new_log:
+            print("The slime is defeated")
+            break
+        else:
+            print("The slime has defeated you in battle try again")
+            life = life - 1
+    if monster == vampire:
+        print("Repeat the following words:")
+        chant()
+        player = input()
+        if player == new_log:
+            print("The vampire is defeated")
+            break
+        else:
+            print("The vampire has defeated you in battle try again")
+            life = life - 1
 
+# WAVE 2
+go = int(input("press 1 to continue"))
+if go == 1:
+    monster_spawn1()
+action = int(input("press 1 to attack "))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+        sys.exit()
+    if monster == goblin:
+        text = ("goblin")
+        player = input("Repeat the following words:")
+        chant()
+        if player == new_log:
+            print("The goblin is defeated")
+            break
+        else:
+            print("The goblin has defeated you in battle try again")
+            life = life - 1
+    elif monster == slime:
+        text = ("slime")
+        player = input("Repeat the following words:")
+        chant()
+        if player == new_log:
+            print("The slime is defeated")
+            break
+        else:
+            print("The slime has defeated you in battle try again")
+            life = life - 1
+    elif monster == vampire:
+        text = ("vampire")
+        player = input("Repeat the following words:")
+        chant()
+        if player == new_log:
+            print("The vampire is defeated")
+            break
+        else:
+            print("The vampire has defeated you in battle try again")
+            life = life - 1
+
+# WAVE 3
+
+go = int(input("press 1 to continue"))
+if go == 1:
+    monster_spawn1()
+action = int(input("press 1 to attack "))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+        sys.exit()
+    if monster == goblin:
+        text = ("goblin")
+        player = input("Repeat the following words:")
+        chant()
+        if player == new_log:
+            print("The goblin is defeated")
+            break
+        else:
+            print("The goblin has defeated you in battle try again")
+            life = life - 1
+    elif monster == slime:
+        text = ("slime")
+        player = input("Repeat the following words:")
+        chant()
+        if player == new_log:
+            print("The slime is defeated")
+            break
+        else:
+            print("The slime has defeated you in battle try again")
+            life = life - 1
+    elif monster == vampire:
+        player = input("Repeat the following words:")
+        if player == new_log:
+            print("The vampire is defeated")
+            break
+        else:
+            print("The vampire has defeated you in battle try again")
+            life = life - 1
+
+#FLOOR 1 DONE
+print("Well done, you have bested the demons of the first floor...")
+print("You find an iron sword and decide to take it for your journey going forward")
+
+go = int(input("press 1 to enter the first floor of the tower"))
+if go == 1:
+    monster_spawn2()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == werewolf:
+        text = ("werewolf")
+        player = input("Repeat the following words:")
+        chant1()
+        if player == new_log:
+            print("The werewolf is defeated")
+            break
+        else:
+            print("The werewolf has defeated you in battle try again")
+            life = life - 1
+    elif monster == succubus:
+        text = ("succubus")
+        player = input("Repeat the following words:")
+        chant1()
+        if player == new_log:
+            print("The succubus is defeated")
+            break
+        else:
+            print("The succubus has defeated you in battle try again")
+            life = life - 1
+    elif monster == hellhound:
+        player = input("Repeat the following words:")
+        chant1()
+        if player == new_log:
+            print("The hell hound is defeated")
+            break
+        else:
+            print("The hell hound has defeated you in battle try again")
+            life = life - 1
