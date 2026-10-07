@@ -19,7 +19,7 @@ wooden_sword = 6
 iron_sword = 5
 holy_sword = 2
 current_sword = wooden_sword
-import random
+#These are the chant dialogues for the text
 def chant():
     global new_log
     global text
@@ -50,6 +50,7 @@ def chant1():
         print(new_log)
     return new_log
 def chant2():
+    global text
     global new_log
     log = [f"lowly {text} which stands in my way shall be eradicated", f"O God whose holy presence dwells above my grasp grant my soul everlasting strength {text} ", f"NO {text} will stand in my way from dusk to dawn"]
     log_ch = random.randint(1,3)
@@ -63,7 +64,37 @@ def chant2():
         new_log = (log[2])
         print(new_log)
     return new_log
-#These are the spawn chances for floor 1-2
+def chant3():
+    global text
+    global new_log
+    log = [f"The blood of this {text} will cover my gaze", f"darkness darker than this evil {text} will no longer prevail", f" the bone of my blade shall torment thy {text}"]
+    log_ch = random.randint(1,3)
+    if log_ch == 1:
+        new_log = (log[0])
+        print(new_log)
+    elif log_ch == 2:
+        new_log = (log[1])
+        print(new_log)
+    elif log_ch == 3:
+        new_log = (log[2])
+        print(new_log)
+    return new_log
+def chant4():
+    global text
+    global new_log
+    log = [f"Unlimited power in the form if my sword, all {text}s will be eradicated", f"Crimson moons seep blood into my soul while I vanquish all {text}s under this fading moon", f" God of blades dance around my very being and extinguish this {text}"]
+    log_ch = random.randint(1,3)
+    if log_ch == 1:
+        new_log = (log[0])
+        print(new_log)
+    elif log_ch == 2:
+        new_log = (log[1])
+        print(new_log)
+    elif log_ch == 3:
+        new_log = (log[2])
+        print(new_log)
+    return new_log
+#These are the spawn chances for floor 1-3
 def monster_spawn1():
     goblin_ch = random.randint(1, 3)
     slime_ch = random.randint(1, 3)
@@ -118,16 +149,16 @@ def monster_spawn2():
         monster = succubus
     elif hellhound_ch == 3:
         print("A hell hound has appeared")
-        monster = hellhounf
+        monster = hellhound
     elif succubus_ch == 3 and werewolf_ch == 3:
         print("A succubus has appeared")
         monster = succubus
     elif succubus_ch == 3 and hellhound_ch == 3:
         print("A hell hound has appeared")
-        monster = vampire
+        monster = hellhound
     elif werewolf_ch == 3 and hellhound_ch == 3:
         print("A hell hound has appeared")
-        monster = vampire
+        monster = hellhound
     if werewolf_ch != 3 and succubus_ch != 3 and hellhound_ch != 3:
         print("A succubus has appeared")
         monster = succubus
@@ -156,15 +187,83 @@ def monster_spawn3():
     elif chimera_ch == 3 and minotaur_ch == 3:
         print("A chimera has appeared")
         monster = chimera
-    elif chimera_ch == 3 and dragom_ch == 3:
+    elif chimera_ch == 3 and dragon_ch == 3:
         print("A dragon has appeared")
         monster = dragon
     elif minotaur_ch == 3 and dragon_ch == 3:
-        print("A minotaur has appeared")
-        monster = vampire
+        print("A dragon has appeared")
+        monster = dragon
     if minotaur_ch != 3 and chimera_ch != 3 and dragon_ch != 3:
         print("A chimera has appeared")
         monster = chimera
+    return monster
+def monster_spawn4():
+    griffin_ch = random.randint(1, 3)
+    basilisk_ch = random.randint(1, 3)
+    cyclops_ch = random.randint(1, 3)
+    global monster
+    monster = 0
+    global griffin
+    griffin = 2
+    global basilisk
+    basilisk = 1
+    global cyclops
+    cyclops = 3
+    if griffin_ch == 3:
+        print("A minotaur has appeared")
+        monster = griffin
+    elif basilisk_ch == 3:
+        print("A basilisk has appeared")
+        monster = basilisk
+    elif cyclops_ch == 3:
+        print("A cyclops has appeared")
+        monster = cyclops
+    elif basilisk_ch == 3 and griffin_ch == 3:
+        print("A basilisk has appeared")
+        monster = basilisk
+    elif basilisk_ch == 3 and cyclops_ch == 3:
+        print("A cyclops has appeared")
+        monster = cyclops
+    elif griffin_ch == 3 and cyclops_ch == 3:
+        print("A griffin has appeared")
+        monster = griffin
+    if griffin_ch != 3 and basilisk_ch != 3 and cyclops_ch != 3:
+        print("A basilisk has appeared")
+        monster = basilisk
+    return monster
+def monster_spawn5():
+    banshee_ch = random.randint(1, 3)
+    hydra_ch = random.randint(1, 3)
+    demon_ch = random.randint(1, 3)
+    global monster
+    monster = 0
+    global banshee
+    banshee = 2
+    global hydra
+    hydra = 1
+    global demon
+    demon = 3
+    if banshee_ch == 3:
+        print("A banshee has appeared")
+        monster = banshee
+    elif hydra_ch == 3:
+        print("A hydra has appeared")
+        monster = hydra
+    elif demon_ch == 3:
+        print("A demon has appeared")
+        monster = demon
+    elif hydra_ch == 3 and banshee_ch == 3:
+        print("A hydra has appeared")
+        monster = hydra
+    elif hydra_ch == 3 and demon_ch == 3:
+        print("A demon has appeared")
+        monster = demon
+    elif banshee_ch == 3 and demon_ch == 3:
+        print("A demon has appeared")
+        monster = demon
+    if banshee_ch != 3 and hydra_ch != 3 and demon_ch != 3:
+        print("A hydra has appeared")
+        monster = hydra
     return monster
 play = int(input("Welcome to Crescents end press 1 to start..."))
 if play == 1:
@@ -736,3 +835,438 @@ while action == 1:
 
 print("A commendable feat for conquering the 2nd floor...")
 print("You find a holy sword glowing on the ground and decide to pick it up")
+
+#WAVE 1
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn4()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == griffin:
+        text = ("griffin")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The griffin is defeated")
+            break
+        else:
+            print("The griffin has defeated you in battle try again")
+            life = life - 1
+    elif monster == basilisk:
+        text = ("basilisk")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The basilisk is defeated")
+            break
+        else:
+            print("The basilisk has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("cyclops")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The cyclops is defeated")
+            break
+        else:
+            print("The cyclops has defeated you in battle try again")
+            life = life - 1
+
+#WAVE 2
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn4()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == griffin:
+        text = ("griffin")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The griffin is defeated")
+            break
+        else:
+            print("The griffin has defeated you in battle try again")
+            life = life - 1
+    elif monster == basilisk:
+        text = ("basilisk")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The basilisk is defeated")
+            break
+        else:
+            print("The basilisk has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("cyclops")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The cyclops is defeated")
+            break
+        else:
+            print("The cyclops has defeated you in battle try again")
+            life = life - 1
+
+#WAVE 3
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn4()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == griffin:
+        text = ("griffin")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The griffin is defeated")
+            break
+        else:
+            print("The griffin has defeated you in battle try again")
+            life = life - 1
+    elif monster == basilisk:
+        text = ("basilisk")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The basilisk is defeated")
+            break
+        else:
+            print("The basilisk has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("cyclops")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The cyclops is defeated")
+            break
+        else:
+            print("The cyclops has defeated you in battle try again")
+            life = life - 1
+
+#WAVE 4
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn4()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == griffin:
+        text = ("griffin")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The griffin is defeated")
+            break
+        else:
+            print("The griffin has defeated you in battle try again")
+            life = life - 1
+    elif monster == basilisk:
+        text = ("basilisk")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The basilisk is defeated")
+            break
+        else:
+            print("The basilisk has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("cyclops")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The cyclops is defeated")
+            break
+        else:
+            print("The cyclops has defeated you in battle try again")
+            life = life - 1
+
+#WAVE 5
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn4()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == griffin:
+        text = ("griffin")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The griffin is defeated")
+            break
+        else:
+            print("The griffin has defeated you in battle try again")
+            life = life - 1
+    elif monster == basilisk:
+        text = ("basilisk")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The basilisk is defeated")
+            break
+        else:
+            print("The basilisk has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("cyclops")
+        print("Repeat the following words:")
+        chant3()
+        player = input()
+        if player == new_log:
+            print("The cyclops is defeated")
+            break
+        else:
+            print("The cyclops has defeated you in battle try again")
+            life = life - 1
+
+#Floor 4 completed
+
+print("To think there would ever be a time where a warrior would be able to travel this far...")
+print("The God slayer sword calls your name in a mysterious voice, you pick it up and feel the power surging through your veins")
+
+#WAVE 1
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn5()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == banshee:
+        text = ("banshee")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The banshee is defeated")
+            break
+        else:
+            print("The banshee has defeated you in battle try again")
+            life = life - 1
+    elif monster == hydra:
+        text = ("hydra")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The hydra is defeated")
+            break
+        else:
+            print("The hydra has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("demon")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The demon is defeated")
+            break
+        else:
+            print("The demon has defeated you in battle try again")
+            life = life - 1
+
+#WAVE 2
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn5()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == banshee:
+        text = ("banshee")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The banshee is defeated")
+            break
+        else:
+            print("The banshee has defeated you in battle try again")
+            life = life - 1
+    elif monster == hydra:
+        text = ("hydra")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The hydra is defeated")
+            break
+        else:
+            print("The hydra has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("demon")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The demon is defeated")
+            break
+        else:
+            print("The demon has defeated you in battle try again")
+            life = life - 1
+
+#WAVE 3
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn5()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == banshee:
+        text = ("banshee")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The banshee is defeated")
+            break
+        else:
+            print("The banshee has defeated you in battle try again")
+            life = life - 1
+    elif monster == hydra:
+        text = ("hydra")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The hydra is defeated")
+            break
+        else:
+            print("The hydra has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("demon")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The demon is defeated")
+            break
+        else:
+            print("The demon has defeated you in battle try again")
+            life = life - 1
+
+#WAVE 4
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn5()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == banshee:
+        text = ("banshee")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The banshee is defeated")
+            break
+        else:
+            print("The banshee has defeated you in battle try again")
+            life = life - 1
+    elif monster == hydra:
+        text = ("hydra")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The hydra is defeated")
+            break
+        else:
+            print("The hydra has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("demon")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The demon is defeated")
+            break
+        else:
+            print("The demon has defeated you in battle try again")
+            life = life - 1
+
+#WAVE 5
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    monster_spawn5()
+action = int(input("Press 1 to attack..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == banshee:
+        text = ("banshee")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The banshee is defeated")
+            break
+        else:
+            print("The banshee has defeated you in battle try again")
+            life = life - 1
+    elif monster == hydra:
+        text = ("hydra")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The hydra is defeated")
+            break
+        else:
+            print("The hydra has defeated you in battle try again")
+            life = life - 1
+    elif monster == cyclops:
+        text = ("demon")
+        print("Repeat the following words:")
+        chant4()
+        player = input()
+        if player == new_log:
+            print("The demon is defeated")
+            break
+        else:
+            print("The demon has defeated you in battle try again")
+            life = life - 1
