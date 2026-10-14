@@ -94,6 +94,21 @@ def chant4():
         new_log = (log[2])
         print(new_log)
     return new_log
+def final_chant():
+    global text
+    global new_log
+    log = [f"I Helios of Apocrypha shall slay you {text}", f"I will free my homeland from you {text}", f"Un-holy{text} who subjegates my land to terror shall fall in my presence"]
+    log_ch = random.randint(1,3)
+    if log_ch == 1:
+        new_log = (log[0])
+        print(new_log)
+    elif log_ch == 2:
+        new_log = (log[1])
+        print(new_log)
+    elif log_ch == 3:
+        new_log = (log[2])
+        print(new_log)
+    return new_log
 #These are the spawn chances for floor 1-3
 def monster_spawn1():
     goblin_ch = random.randint(1, 3)
@@ -130,140 +145,174 @@ def monster_spawn1():
         monster = slime
     return monster
 def monster_spawn2():
-    werewolf_ch = random.randint(1, 3)
-    succubus_ch = random.randint(1, 3)
-    hellhound_ch = random.randint(1, 3)
-    global monster
-    monster = 0
-    global werewolf
-    werewolf = 2
-    global succubus
-    succubus = 1
-    global hellhound
-    hellhound = 3
-    if werewolf_ch == 3:
-        print("A werewolf has appeared")
-        monster = werewolf
-    elif succubus_ch == 3:
-        print("A succubus has appeared")
-        monster = succubus
-    elif hellhound_ch == 3:
-        print("A hell hound has appeared")
-        monster = hellhound
-    elif succubus_ch == 3 and werewolf_ch == 3:
-        print("A succubus has appeared")
-        monster = succubus
-    elif succubus_ch == 3 and hellhound_ch == 3:
-        print("A hell hound has appeared")
-        monster = hellhound
-    elif werewolf_ch == 3 and hellhound_ch == 3:
-        print("A hell hound has appeared")
-        monster = hellhound
-    if werewolf_ch != 3 and succubus_ch != 3 and hellhound_ch != 3:
-        print("A succubus has appeared")
-        monster = succubus
-    return monster
+        werewolf_ch = random.randint(1, 3)
+        succubus_ch = random.randint(1, 3)
+        hellhound_ch = random.randint(1, 3)
+        global monster
+        monster = 0
+        global werewolf
+        werewolf = 2
+        global succubus
+        succubus = 1
+        global hellhound
+        hellhound = 3
+        if werewolf_ch == 3:
+            print("A werewolf has appeared")
+            monster = werewolf
+        elif succubus_ch == 3:
+            print("A succubus has appeared")
+            monster = succubus
+        elif hellhound_ch == 3:
+            print("A hell hound has appeared")
+            monster = hellhound
+        elif succubus_ch == 3 and werewolf_ch == 3:
+            print("A succubus has appeared")
+            monster = succubus
+        elif succubus_ch == 3 and hellhound_ch == 3:
+            print("A hell hound has appeared")
+            monster = hellhound
+        elif werewolf_ch == 3 and hellhound_ch == 3:
+            print("A hell hound has appeared")
+            monster = hellhound
+        if werewolf_ch != 3 and succubus_ch != 3 and hellhound_ch != 3:
+            print("A succubus has appeared")
+            monster = succubus
+        return monster
 def monster_spawn3():
-    minotaur_ch = random.randint(1, 3)
-    chimera_ch = random.randint(1, 3)
-    dragon_ch = random.randint(1, 3)
-    global monster
-    monster = 0
-    global minotaur
-    minotaur = 2
-    global chimera
-    chimera = 1
-    global dragon
-    dragon = 3
-    if minotaur_ch == 3:
-        print("A minotaur has appeared")
-        monster = minotaur
-    elif chimera_ch == 3:
-        print("A chimera has appeared")
-        monster = chimera
-    elif dragon_ch == 3:
-        print("A dragon has appeared")
-        monster = dragon
-    elif chimera_ch == 3 and minotaur_ch == 3:
-        print("A chimera has appeared")
-        monster = chimera
-    elif chimera_ch == 3 and dragon_ch == 3:
-        print("A dragon has appeared")
-        monster = dragon
-    elif minotaur_ch == 3 and dragon_ch == 3:
-        print("A dragon has appeared")
-        monster = dragon
-    if minotaur_ch != 3 and chimera_ch != 3 and dragon_ch != 3:
-        print("A chimera has appeared")
-        monster = chimera
-    return monster
+        minotaur_ch = random.randint(1, 3)
+        chimera_ch = random.randint(1, 3)
+        dragon_ch = random.randint(1, 3)
+        global monster
+        monster = 0
+        global minotaur
+        minotaur = 2
+        global chimera
+        chimera = 1
+        global dragon
+        dragon = 3
+        if minotaur_ch == 3:
+            print("A minotaur has appeared")
+            monster = minotaur
+        elif chimera_ch == 3:
+            print("A chimera has appeared")
+            monster = chimera
+        elif dragon_ch == 3:
+            print("A dragon has appeared")
+            monster = dragon
+        elif chimera_ch == 3 and minotaur_ch == 3:
+            print("A chimera has appeared")
+            monster = chimera
+        elif chimera_ch == 3 and dragon_ch == 3:
+            print("A dragon has appeared")
+            monster = dragon
+        elif minotaur_ch == 3 and dragon_ch == 3:
+            print("A dragon has appeared")
+            monster = dragon
+        if minotaur_ch != 3 and chimera_ch != 3 and dragon_ch != 3:
+            print("A chimera has appeared")
+            monster = chimera
+        return monster
 def monster_spawn4():
-    griffin_ch = random.randint(1, 3)
-    basilisk_ch = random.randint(1, 3)
-    cyclops_ch = random.randint(1, 3)
-    global monster
-    monster = 0
-    global griffin
-    griffin = 2
-    global basilisk
-    basilisk = 1
-    global cyclops
-    cyclops = 3
-    if griffin_ch == 3:
-        print("A minotaur has appeared")
-        monster = griffin
-    elif basilisk_ch == 3:
-        print("A basilisk has appeared")
-        monster = basilisk
-    elif cyclops_ch == 3:
-        print("A cyclops has appeared")
-        monster = cyclops
-    elif basilisk_ch == 3 and griffin_ch == 3:
-        print("A basilisk has appeared")
-        monster = basilisk
-    elif basilisk_ch == 3 and cyclops_ch == 3:
-        print("A cyclops has appeared")
-        monster = cyclops
-    elif griffin_ch == 3 and cyclops_ch == 3:
-        print("A griffin has appeared")
-        monster = griffin
-    if griffin_ch != 3 and basilisk_ch != 3 and cyclops_ch != 3:
-        print("A basilisk has appeared")
-        monster = basilisk
-    return monster
+        griffin_ch = random.randint(1, 3)
+        basilisk_ch = random.randint(1, 3)
+        cyclops_ch = random.randint(1, 3)
+        global monster
+        monster = 0
+        global griffin
+        griffin = 2
+        global basilisk
+        basilisk = 1
+        global cyclops
+        cyclops = 3
+        if griffin_ch == 3:
+            print("A minotaur has appeared")
+            monster = griffin
+        elif basilisk_ch == 3:
+            print("A basilisk has appeared")
+            monster = basilisk
+        elif cyclops_ch == 3:
+            print("A cyclops has appeared")
+            monster = cyclops
+        elif basilisk_ch == 3 and griffin_ch == 3:
+            print("A basilisk has appeared")
+            monster = basilisk
+        elif basilisk_ch == 3 and cyclops_ch == 3:
+            print("A cyclops has appeared")
+            monster = cyclops
+        elif griffin_ch == 3 and cyclops_ch == 3:
+            print("A griffin has appeared")
+            monster = griffin
+        if griffin_ch != 3 and basilisk_ch != 3 and cyclops_ch != 3:
+            print("A basilisk has appeared")
+            monster = basilisk
+        return monster
 def monster_spawn5():
-    banshee_ch = random.randint(1, 3)
-    hydra_ch = random.randint(1, 3)
-    demon_ch = random.randint(1, 3)
+        banshee_ch = random.randint(1, 3)
+        hydra_ch = random.randint(1, 3)
+        demon_ch = random.randint(1, 3)
+        global monster
+        monster = 0
+        global banshee
+        banshee = 2
+        global hydra
+        hydra = 1
+        global demon
+        demon = 3
+        if banshee_ch == 3:
+            print("A banshee has appeared")
+            monster = banshee
+        elif hydra_ch == 3:
+            print("A hydra has appeared")
+            monster = hydra
+        elif demon_ch == 3:
+            print("A demon has appeared")
+            monster = demon
+        elif hydra_ch == 3 and banshee_ch == 3:
+            print("A hydra has appeared")
+            monster = hydra
+        elif hydra_ch == 3 and demon_ch == 3:
+            print("A demon has appeared")
+            monster = demon
+        elif banshee_ch == 3 and demon_ch == 3:
+            print("A demon has appeared")
+            monster = demon
+        if banshee_ch != 3 and hydra_ch != 3 and demon_ch != 3:
+            print("A hydra has appeared")
+            monster = hydra
+        return monster
+def final_boss():
+    walp1_ch = random.randint(1, 3)
+    walp2_ch = random.randint(1, 3)
+    walp3_ch = random.randint(1, 3)
     global monster
     monster = 0
-    global banshee
-    banshee = 2
-    global hydra
-    hydra = 1
-    global demon
-    demon = 3
-    if banshee_ch == 3:
-        print("A banshee has appeared")
-        monster = banshee
-    elif hydra_ch == 3:
-        print("A hydra has appeared")
-        monster = hydra
-    elif demon_ch == 3:
-        print("A demon has appeared")
-        monster = demon
-    elif hydra_ch == 3 and banshee_ch == 3:
-        print("A hydra has appeared")
-        monster = hydra
-    elif hydra_ch == 3 and demon_ch == 3:
-        print("A demon has appeared")
-        monster = demon
-    elif banshee_ch == 3 and demon_ch == 3:
-        print("A demon has appeared")
-        monster = demon
-    if banshee_ch != 3 and hydra_ch != 3 and demon_ch != 3:
-        print("A hydra has appeared")
-        monster = hydra
+    global walp2
+    walp2 = 2
+    global walp1
+    walp1 = 1
+    global walp3
+    walp3 = 3
+    if walp1_ch == 3:
+        print("You ready your sword for battle")
+        monster = walp1
+    elif walp2_ch == 3:
+        print("Young Helios moves further")
+        monster = walp2
+    elif walp3_ch == 3:
+        print("You ready your sword for battle")
+        monster = walp3
+    elif walp2_ch == 3 and walp1_ch == 3:
+        print("Young Helios moves further")
+        monster = walp1
+    elif walp2_ch == 3 and walp3_ch == 3:
+        print("You ready your sword for battle")
+        monster = walp2
+    elif walp1_ch == 3 and walp3_ch == 3:
+        print("Young Helios moves further")
+        monster = walp3
+    if walp1_ch != 3 and walp2_ch != 3 and walp3_ch != 3:
+        print("You ready your sword for battle")
+        monster = walp3
     return monster
 play = int(input("Welcome to Crescents end press 1 to start..."))
 if play == 1:
@@ -1270,3 +1319,8 @@ while action == 1:
         else:
             print("The demon has defeated you in battle try again")
             life = life - 1
+
+print("After relentless battle the young warrior Helios drags himself to the the top of crescent tower...")
+print("Upon the heath an unholy presence descends from the heavens revealing himself to be the dark angel")
+print("Walpurgis...")
+
