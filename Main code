@@ -1,5 +1,3 @@
-import sys
-
 print(r"""
  ▄████▄   ██▀███  ▓█████   ██████ ▓█████  ███▄    █ ▄▄▄█████▓   ▓█████  ███▄    █ ▓█████▄ 
 ▒██▀ ▀█  ▓██ ▒ ██▒▓█   ▀ ▒██    ▒ ▓█   ▀  ██ ▀█   █ ▓  ██▒ ▓▒   ▓█   ▀  ██ ▀█   █ ▒██▀ ██▌
@@ -13,6 +11,8 @@ print(r"""
 ░                                                                                  ░      
 """)
 import random
+import sys
+import time
 import math
 life = 5
 wooden_sword = 6
@@ -314,6 +314,12 @@ def final_boss():
         print("You ready your sword for battle")
         monster = walp3
     return monster
+def slow_print(tex):
+    for char in tex:
+        print(char, end="", flush=True)
+        time.sleep(0.05)  # Adjust this number to change the speed (in seconds)
+    print()  # Prints a newline at the end
+
 play = int(input("Welcome to Crescents end press 1 to start..."))
 if play == 1:
     print("In a far off world a young warrior named Helios wishes to save his home land of apocphyra from damnation.")
@@ -1320,7 +1326,140 @@ while action == 1:
             print("The demon has defeated you in battle try again")
             life = life - 1
 
+#FINAL BOSS
+
 print("After relentless battle the young warrior Helios drags himself to the the top of crescent tower...")
 print("Upon the heath an unholy presence descends from the heavens revealing himself to be the dark angel")
 print("Walpurgis...")
 
+#WAVE 1
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    final_boss()
+action = int(input("Press 1 to advance..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == walp1:
+        text = ("Walpurgis")
+        print("Repeat the following words:")
+        final_chant()
+        player = input()
+        if player == new_log:
+            print("Walpurgis has been damaged")
+            break
+        else:
+            print("You miss your attack but a new opening has shown")
+            life = life - 1
+    elif monster == walp2:
+        text = ("Walpurgis")
+        print("Repeat the following words:")
+        final_chant()
+        player = input()
+        if player == new_log:
+            print("Walpurgis has been damaged")
+            break
+        else:
+            print("You miss your attack but a new opening has shown")
+            life = life - 1
+    elif monster == walp3:
+        text = ("Walpurgis")
+        print("Repeat the following words:")
+        final_chant()
+        player = input()
+        if player == new_log:
+            print("Walpurgis has been damaged")
+            break
+        else:
+            print("You miss your attack but a new opening has shown")
+            life = life - 1
+
+#WAVE 2
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    final_boss()
+action = int(input("Press 1 to advance..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == walp1:
+        text = ("Walpurgis")
+        print("Repeat the following words:")
+        final_chant()
+        player = input()
+        if player == new_log:
+            print("The un-holy being has been damaged once more")
+            break
+        else:
+            print("A fatal mistake that almost cost you your life")
+            life = life - 1
+    elif monster == walp2:
+        text = ("Walpurgis")
+        print("Repeat the following words:")
+        final_chant()
+        player = input()
+        if player == new_log:
+            print("The un-holy being has been damaged once more")
+            break
+        else:
+            print("A fatal mistake that almost cost you your life")
+            life = life - 1
+    elif monster == walp3:
+        text = ("Walpurgis")
+        print("Repeat the following words:")
+        final_chant()
+        player = input()
+        if player == new_log:
+            print("The un-holy being has been damaged once more")
+            break
+        else:
+            print("A fatal mistake that almost cost you your life")
+            life = life - 1
+
+#WAVE 3
+
+go = int(input("press 1 to continue..."))
+if go == 1:
+    final_boss()
+action = int(input("Press 1 to advance..."))
+while action == 1:
+    if life == 0:
+        print("You have no more lives.......GAME OVER")
+    if monster == walp1:
+        text = ("Walpurgis")
+        print("Repeat the following words:")
+        final_chant()
+        player = input()
+        if player == new_log:
+            print("At last... Walpurgis has been defeated")
+            break
+        else:
+            print("A fatal mistake that almost cost you your life")
+            life = life - 1
+    elif monster == walp2:
+        text = ("Walpurgis")
+        print("Repeat the following words:")
+        final_chant()
+        player = input()
+        if player == new_log:
+            print("The un-holy being has been damaged once more")
+            break
+        else:
+            print("A fatal mistake that almost cost you your life")
+            life = life - 1
+    elif monster == walp3:
+        text = ("Walpurgis")
+        print("Repeat the following words:")
+        final_chant()
+        player = input()
+        if player == new_log:
+            print("The un-holy being has been damaged once more")
+            break
+        else:
+            print("A fatal mistake that almost cost you your life")
+            life = life - 1
+
+print("The warrior Helios stands upon the fallen body of Walpurgis and holds his sword high")
+print("")
