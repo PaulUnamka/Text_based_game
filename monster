@@ -1,3 +1,12 @@
+import random
+import sys
+import time
+life = 5
+wooden_sword = 6
+iron_sword = 5
+holy_sword = 2
+current_sword = wooden_sword
+#These are the chant dialogues for the text
 def chant():
     global new_log
     global text
@@ -87,7 +96,7 @@ def final_chant():
         new_log = (log[2])
         print(new_log)
     return new_log
-
+#These are the spawn chances for floor 1-3
 def monster_spawn1():
     goblin_ch = random.randint(1, 3)
     slime_ch = random.randint(1, 3)
@@ -292,3 +301,8 @@ def final_boss():
         print("You ready your sword for battle")
         monster = walp3
     return monster
+def slow_print(tex):
+    for char in tex:
+        print(char, end="", flush=True)
+        time.sleep(0.05)  # Adjust this number to change the speed (in seconds)
+    print()  # Prints a newline at the end
